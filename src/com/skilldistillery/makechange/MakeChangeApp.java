@@ -17,12 +17,8 @@ public class MakeChangeApp {
 		
 		//check if amount given is enough to pay for the item
 		//display if customer paid enough, exactly or too little
-		mc.haveEnough();
-		
-		
 		//calculate how many bills and coins the customer needs in change
-		//mc.calculateChange();
-		//System.out.println(mc.dollarsAndCents);
+		mc.haveEnough();
 		
 		kb.close();
 	}

@@ -18,6 +18,7 @@ public class MakeChange {
 			System.out.printf("You need $%.2f in change.\n", changeReturned);
 		}
 
+		//assign bill and coin placeholders
 		int twenty = 0;
 		int ten = 0;
 		int five = 0;
@@ -27,6 +28,8 @@ public class MakeChange {
 		int nickel = 0;
 		int penny = 0;
 
+		//trouble with pennies rounding
+		//multiplying * 100 fixed this problem
 		double a = changeReturned * 100;
 		
 		while (a >= 2000) {
@@ -62,6 +65,9 @@ public class MakeChange {
 			penny++;
 		}
 		
+		// check if the customer has paid enough
+		// if they have print dollar and bill count
+		// if they're short tell them
 		if (amountGiven < itemPrice) {
 			changeReturned = itemPrice - amountGiven;
 			System.out.printf("You are short $%.2f\n", changeReturned);
