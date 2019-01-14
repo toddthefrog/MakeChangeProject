@@ -17,13 +17,7 @@ public class MakeChange {
 			changeReturned = amountGiven - itemPrice;
 			System.out.printf("You need $%.2f in change.\n", changeReturned);
 		}
-		if (amountGiven < itemPrice) {
-			changeReturned = itemPrice - amountGiven;
-			System.out.printf("You are short $%.2f\n", changeReturned);
-		}
-	}
-	
-	public void calculateChange() {
+
 		int twenty = 0;
 		int ten = 0;
 		int five = 0;
@@ -32,30 +26,50 @@ public class MakeChange {
 		int dime = 0;
 		int nickel = 0;
 		int penny = 0;
+
+		double a = changeReturned * 100;
 		
-		while (changeReturned != 0) {
-			
-			if (changeReturned >= 20.00 ) {
-				changeReturned = changeReturned - 20.00;
-				twenty ++;
-			}
-			if (changeReturned >= 10.00 && changeReturned < 20.00) {
-				changeReturned = changeReturned - 10.00;
-				ten ++;
-			}
-			if (changeReturned >= 5.00 && changeReturned < 10.00) {
-				changeReturned = changeReturned - 5.00;
-				five ++;
-			}
-			if (changeReturned >= 1.00 && changeReturned < 5.00) {
-				changeReturned = changeReturned - 1.00;
-				one ++;
-			}
-		
+		while (a >= 2000) {
+			a = a - 2000;
+			twenty++;
+		}
+		while (a >= 1000) {
+			a = a - 1000;
+			ten++;
+		}
+		while (a >= 500) {
+			a = a - 500;
+			five++;
+		}
+		while (a >= 100) {
+			a = a - 100;
+			one++;
+		}
+		while (a >= 25) {
+			a = a - 25;
+			quarter++;
+		}
+		while (a >= 10) {
+			a = a - 10;
+			dime++;
+		}
+		while (a >= 5) {
+			a = a - 5;
+			nickel++;
+		}
+		while (a > 0) {
+			a--;
+			penny++;
 		}
 		
-		dollarsAndCents = twenty + " twenty(s) " + ten + " ten(s) " + five + " five(s) " + one + "one(s)";
-		
+		if (amountGiven < itemPrice) {
+			changeReturned = itemPrice - amountGiven;
+			System.out.printf("You are short $%.2f\n", changeReturned);
+		} else {
+			System.out.println(twenty + " twenty(s) " + ten + " ten(s) " + five + " five(s) " + one + " one(s) " + quarter
+					+ " quarter(s) " + dime + " dime(s) " + nickel + " nickel(s) " + penny + " penny(s)");
+		}
+
 	}
-	
+
 }

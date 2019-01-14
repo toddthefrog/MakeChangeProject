@@ -21,13 +21,8 @@ public class MakeChangeApp {
 		
 		
 		//calculate how many bills and coins the customer needs in change
-		mc.calculateChange();
-		System.out.println(mc.dollarsAndCents);
-		
-		
-		
-		
-		
+		//mc.calculateChange();
+		//System.out.println(mc.dollarsAndCents);
 		
 		kb.close();
 	}
