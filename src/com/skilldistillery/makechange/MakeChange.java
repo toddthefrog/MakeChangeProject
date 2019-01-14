@@ -60,7 +60,8 @@ public class MakeChange {
 			a = a - 5;
 			nickel++;
 		}
-		while (a > 0) {
+		//fix rounding error
+		while (a > 0.999) {
 			a--;
 			penny++;
 		}
